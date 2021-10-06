@@ -1,7 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="test all +gen" type="GoTestRunConfiguration" factoryName="Go Test">
+  <configuration default="false" name="test e2e" type="GoTestRunConfiguration" factoryName="Go Test">
     <module name="prisma-client-go" />
     <working_directory value="$PROJECT_DIR$/" />
+    <go_parameters value="-run '$TestE2E.*$' -tags e2e" />
     <envs>
       <env name="PHOTON_GO_LOG" value="info" />
       <env name="LOG_QUERIES" value="y" />
@@ -11,23 +12,22 @@
       <env name="PRISMA_CLIENT_GO_TEST_DEV" value="true" />
     </envs>
     <EXTENSION ID="net.ashald.envfile">
-      <option name="IS_ENABLED" value="false" />
+      <option name="IS_ENABLED" value="true" />
       <option name="IS_SUBST" value="false" />
       <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
       <option name="IS_IGNORE_MISSING_FILES" value="false" />
       <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
       <ENTRIES>
         <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        <ENTRY IS_ENABLED="true" PARSER="env" PATH="test/e2e/e2e.env" />
       </ENTRIES>
     </EXTENSION>
     <kind value="DIRECTORY" />
     <package value="github.com/prisma/photongo" />
-    <directory value="$PROJECT_DIR$/" />
+    <directory value="$PROJECT_DIR$/test/e2e" />
     <filePath value="$PROJECT_DIR$/" />
     <framework value="gotest" />
     <pattern value="./..." />
-    <method v="2">
-      <option name="GoBeforeRunTask" command="generate ./..." />
-    </method>
+    <method v="2" />
   </configuration>
 </component>
